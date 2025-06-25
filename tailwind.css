@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --variable-collection-button2: rgba(23, 34, 56, 1);
+  --variable-collection-color: rgba(156, 163, 175, 1);
+  --variable-collection-color-2: rgba(249, 250, 251, 1);
+  --variable-collection-dark: rgba(10, 14, 39, 1);
+  --variable-collection-dark-light: rgba(16, 19, 49, 1);
+  --variable-collection-dark-blue: rgba(13, 27, 62, 1);
+  --variable-collection-light-blue: rgb(121, 142, 235);
+  --variable-collection-sky-blue: rgba(56, 189, 248, 1);
+  --variable-collection-grey-400: rgba(196, 205, 213, 1);
+  --variable-collection-grey100: rgba(243, 244, 246, 1);
+  --variable-collection-grey300: rgba(209, 213, 219, 1);
+  --variable-collection-grey800: rgba(33, 43, 54, 1);
+  --variable-collection-main: rgba(67, 97, 238, 1);
+  --variable-collection-main2: rgba(80, 146, 255, 1);
+  --variable-collection-white: rgba(255, 255, 255, 1);
+  --variable-collection-purple: rgba(147, 51, 234, 1);
+  --variable-collection-purple-light: rgba(196, 181, 253, 1);
+  --variable-collection-primary: rgba(67, 97, 238, 1);
+  --variable-collection-secondary: rgba(26, 35, 126, 1);
+}
