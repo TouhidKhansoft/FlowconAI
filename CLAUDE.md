@@ -10,7 +10,7 @@ FlowConAI landing page - a responsive React-based website built with Vite and st
 
 ```bash
 # Development (runs on port 5173, may auto-increment if in use)
-yarn dev
+yarn run dev
 
 # Production build (outputs to /dist)
 yarn build
@@ -67,4 +67,4 @@ yarn build-storybook
 - CTA section has unique gradient background with visible border
 - Buttons have blue gradient with enhanced hover effects
 - "AI Age" text is white, not gradient
-- Background uses teal/blue blur orbs matching flowcenai-landing project
+- Background uses teal/blue blur orbs matching flowconai-landing project
