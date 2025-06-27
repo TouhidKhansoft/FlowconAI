@@ -87,6 +87,27 @@ export const useGeminiRuntime = (initialMessage = null) => {
       setIsLoading(true);
 
       try {
+        // Ensure we have the complete message history including the user message
+        const welcomeMessage = {
+          id: '1',
+          role: 'assistant',
+          content: [{ 
+            type: 'text', 
+            text: 'Welcome to FlowConAI! I\'m here to help you explore how AI can transform your business. What would you like to know?' 
+          }]
+        };
+        
+        const userMessage = {
+          id: '2',
+          role: 'user',
+          content: [{ 
+            type: 'text', 
+            text: initialMessage.trim() 
+          }]
+        };
+        
+        const currentMessages = [welcomeMessage, userMessage];
+
         // Check Q&A patterns first
         const patternMatch = findBestMatch(initialMessage);
         
@@ -96,7 +117,7 @@ export const useGeminiRuntime = (initialMessage = null) => {
             role: 'assistant',
             content: [{ type: 'text', text: patternMatch.pattern.response }]
           };
-          updateMessages([...messagesRef.current, assistantMessage]);
+          updateMessages([...currentMessages, assistantMessage]);
         } else {
           // Use Gemini API
           const model = genAIRef.current.getGenerativeModel({ model: 'gemini-1.5-flash' });
@@ -184,7 +205,8 @@ Keep responses under 200 words unless asked for more detail.`;
       role: 'user',
       content: message.content
     };
-    updateMessages([...messagesRef.current, userMessage]);
+    const currentMessages = [...messagesRef.current, userMessage];
+    updateMessages(currentMessages);
 
     setIsLoading(true);
 
@@ -203,7 +225,7 @@ Keep responses under 200 words unless asked for more detail.`;
           role: 'assistant',
           content: [{ type: 'text', text: patternMatch.pattern.response }]
         };
-        updateMessages([...messagesRef.current, assistantMessage]);
+        updateMessages([...currentMessages, assistantMessage]);
         setIsLoading(false);
         return;
       }

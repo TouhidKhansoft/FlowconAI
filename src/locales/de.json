@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "service": "Services",
+    "about": "Über uns",
+    "features": "Funktionen",
+    "blogs": "Blogs",
+    "home": "Startseite",
+    "contactUs": "Kontakt"
+  },
+  "hero": {
+    "title": "Beratung und individuelle Entwicklung",
+    "titleHighlight": "für das KI-Zeitalter",
+    "subtitle": "FlowConAI ist ein deutsches KI-Beratungsunternehmen, das DSGVO-konforme Lösungen und On-Premise-Bereitstellung für volle Datenkontrolle bietet.",
+    "tags": {
+      "gdpr": "DSGVO-konform",
+      "onPremise": "On-Premise-Lösungen",
+      "dataSovereignty": "Datensouveränität"
+    },
+    "searchPlaceholder": "Fragen Sie Flowcon, wie er Ihrem Unternehmen helfen kann........",
+    "cta": "Kontaktieren Sie uns"
+  },
+  "expertise": {
+    "title": "Unsere Expertise",
+    "subtitle": "Wir kombinieren modernste KI-Funktionen mit höchsten Standards für Datenschutz und Infrastrukturflexibilität.",
+    "services": {
+      "aiStrategy": {
+        "title": "KI-Strategieberatung",
+        "description": "Analysieren Sie Ihre Geschäftsprozesse, Engpässe und neue Möglichkeiten, um eine maßgeschneiderte KI-Strategie für Ihr Unternehmen zu entwickeln"
+      },
+      "employeeTraining": {
+        "title": "Mitarbeiterschulungen",
+        "description": "Machen Sie alle in Ihrer Organisation fit für das KI-Zeitalter. Lernen Sie, externe Intelligenz an den wirkungsvollsten Stellen in Ihren Arbeitsabläufen zu integrieren"
+      },
+      "customAgents": {
+        "title": "Individuelle KI-Agenten und LLM-Anwendungen",
+        "description": "Anwendungen, die sich vollständig in die Tools Ihrer Organisation integrieren. Integrieren Sie alles und lassen Sie KI-Agenten werkzeugübergreifende Arbeitsabläufe automatisieren."
+      },
+      "workflowAutomation": {
+        "title": "Workflow-Automatisierung",
+        "description": "Optimieren Sie Abläufe mit intelligenter Automatisierung, die sich an Ihre Geschäftsanforderungen anpasst und die Effizienz verbessert."
+      },
+      "processOptimization": {
+        "title": "Prozessoptimierung mit KI",
+        "description": "Nutzen Sie KI und maschinelles Lernen, um Arbeitsabläufe zu analysieren, die Leistung zu optimieren und die betriebliche Effizienz zu steigern."
+      },
+      "gdprCompliant": {
+        "title": "DSGVO-konform",
+        "description": "Alle unsere KI-Lösungen sind mit europäischen Datenschutzbestimmungen konzipiert, um sicherzustellen, dass Ihr Unternehmen konform bleibt."
+      }
+    }
+  },
+  "features": {
+    "automationWorkflows": {
+      "badge": "Arbeiten Sie intelligenter, nicht härter",
+      "title": "Automatisierung & Intelligente Workflows",
+      "description": "FlowConAI erstellt intelligente Workflows mit KI-Agenten, um repetitive Aufgaben zu automatisieren, Prozesse zu optimieren und betrieblichen Aufwand zu reduzieren. Optimieren Sie Ihre Geschäftsabläufe mit intelligenter End-to-End-Automatisierung. Unser Service für KI-Automatisierung & Intelligente Workflows hilft Ihnen, repetitive Prozesse zu identifizieren und mit KI-gestützten Lösungen neu zu gestalten, um Zeit zu sparen und menschliche Fehler zu reduzieren."
+    },
+    "dataInsights": {
+      "title": "Datengestützte Einblicke & KI-Analytik",
+      "subtitle": "Machen Sie aus Daten Entscheidungen.",
+      "description": "Wir helfen Ihnen, Erkenntnisse mit fortschrittlicher Analytik und maschinellen Lernmodellen zu gewinnen, die Ihrem Team die Kraft geben, präzise zu handeln."
+    },
+    "aiStrategy": {
+      "title": "KI-Strategie & Roadmap",
+      "subtitle": "Transformieren Sie Ihr Unternehmen mit KI.",
+      "description": "Wir helfen Ihnen, eine klare KI-Vision zu definieren, sie mit Geschäftszielen abzustimmen und eine maßgeschneiderte Roadmap zu erstellen, um KI betriebsweit einzusetzen."
+    }
+  },
+  "about": {
+    "sectionTitle": "Über uns",
+    "companyName": "FlowConAI",
+    "tagline": "Wir befähigen Unternehmen durch Automatisierung und intelligente Agenten für eine KI-gesteuerte Zukunft.",
+    "description": "Wir sind ein kleines, dezentrales, multinationales Team, das sehr leidenschaftlich über IT und KI ist. Mit einem tiefen Hintergrund in professioneller Softwareentwicklung, Projektmanagement und Kundenerfahrung, mit einer kombinierten Erfahrung von über 80 Jahren und Dutzenden von Projekten"
+  },
+  "blog": {
+    "sectionTitle": "Neueste Blogs & Nachrichten",
+    "sectionSubtitle": "Willkommen im Blog unserer KI-Beratungsagenten – Ihre Anlaufstelle für die neuesten Entwicklungen in den Bereichen künstliche Intelligenz, Automatisierung und digitale Transformation.",
+    "viewAllBlogs": "Alle Blogs anzeigen",
+    "backToBlogs": "Zurück zu allen Blogs",
+    "moreArticles": "Weitere Artikel",
+    "categories": {
+      "aiUseCases": "KI-Anwendungsfälle im Geschäft",
+      "automationTrends": "Automatisierungstrends",
+      "behindTheBuild": "Hinter dem Aufbau"
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Antworten auf häufige Fragen zu FlowConAI und seinen Funktionen.",
+    "questions": {
+      "q1": {
+        "question": "1. Was ist KI-Beratung und wie kann sie meinem Unternehmen helfen?",
+        "answer": "KI-Beratung umfasst die Unterstützung von Organisationen bei der Identifizierung, Gestaltung und Implementierung KI-gesteuerter Lösungen zur Verbesserung der Abläufe, Steigerung der Effizienz und Erschließung neuer Möglichkeiten. Egal, ob Sie Arbeitsabläufe automatisieren, KI-Agenten integrieren oder die Kundenerfahrung verbessern möchten, wir begleiten Sie bei jedem Schritt."
+      },
+      "q2": {
+        "question": "2. Welche Arten von KI-Lösungen bieten Sie an?",
+        "answer": "Wir bieten eine breite Palette von Tools, bestehend aus internen Tools, individueller Entwicklung, bis hin zu produktionsreifen externen Diensten. Ein tiefer Einblick in aktuelle KI-Fähigkeiten und Werkzeuge ermöglicht es uns, das richtige Tool für jede Geschäftsanforderung zu finden oder zu entwickeln."
+      },
+      "q3": {
+        "question": "3. Ist KI-Beratung nur für große Unternehmen?",
+        "answer": "Jedes Unternehmen oder jede Einzelperson kann derzeit stark von mehr Wissen oder konkreten Tools und Arbeitsabläufen profitieren, die moderne KI-Lösungen nutzen. Am Arbeitsplatz findet ein großer Wandel statt. Viele Fähigkeiten werden überflüssig, während andere sehr wichtig werden. Die meisten Einzelpersonen können ihre Produktivität bereits vervielfachen oder in Rollen einsteigen, die zuvor jahrelange Ausbildung erforderten. Dies gilt doppelt für ganze Organisationen."
+      },
+      "q4": {
+        "question": "4. Wie gehen Sie an neue Projekte heran?",
+        "answer": "Wir können KI jetzt mit jeder Software verbinden und integrieren, die eine API hat. Dies ist über das Model Context Protocol (MCP) möglich. MCP läutet ein neues Zeitalter der KI-Konnektivität und -Nützlichkeit ein. Zum Beispiel können agentische KI-Anwendungen durch die Integration mit Ihrer Dokumentenspeicherung, Projektmanagement-Tools und relevanten Datenquellen täglich Stunden an Arbeit für jede Person einsparen."
+      },
+      "q5": {
+        "question": "5. Benötige ich technisches Fachwissen, um mit Ihnen zu arbeiten?",
+        "answer": "Das hängt natürlich von den Anwendungen ab. Generell gibt es viele schnelle Erfolge, die innerhalb weniger Tage oder weniger integriert werden können. Mitarbeiter müssen jedoch weiterhin darin geschult werden, wie sie diese Tools effektiv nutzen und wann sie sie einsetzen sollten.\n\nIndividuelle Lösungen, die eine Entwicklung von uns erfordern, müssen nach gründlicher Prüfung der Anforderungen geschätzt werden."
+      },
+      "q6": {
+        "question": "6. Können Sie KI mit unseren bestehenden Systemen integrieren?",
+        "answer": "Datenschutz und Sicherheit sind eines unserer Hauptanliegen. Wir sind uns bewusst, dass viele Unternehmen ihre sensiblen Dokumente nicht mit großen KI-Unternehmen wie OpenAI teilen möchten und keine DSGVO-regulierten Daten mit Unternehmen teilen dürfen, die in den USA tätig sind und diese Vorschriften nicht einhalten.\n\nDaher bieten wir eine vollständige Palette von Optionen von On-Premise-Bereitstellungen von Open-Source-Modellen über DSGVO- und EU-KI-Gesetz-konforme Lösungen wie sie von Mistral angeboten werden, bis hin zur direkten Nutzung von US / chinesischen KI-Lösungen, wie von unseren Kunden gewünscht und gesetzlich vorgeschrieben."
+      }
+    }
+  },
+  "cta": {
+    "title": "Bereit, Ihr Unternehmen für das KI-Zeitalter zu transformieren?",
+    "subtitle": "Nehmen Sie Kontakt mit unserem Team von KI-Beratern auf, um zu besprechen, wie wir Ihnen helfen können, datenschutzorientierte, effiziente KI-Lösungen zu implementieren, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind.",
+    "button": "Beratungstermin vereinbaren"
+  },
+  "footer": {
+    "companyDescription": "Transformation von Unternehmen für das KI-Zeitalter mit Automatisierung, Agenten und strategischer Integration.",
+    "copyright": "FlowConAI 2025. Alle Rechte vorbehalten",
+    "company": "Unternehmen",
+    "imprint": "Impressum",
+    "features": "Funktionen",
+    "contactTitle": "Kontaktieren Sie uns",
+    "address": {
+      "street": "Aachener Str. 392,",
+      "postalCode": "50933 Köln,",
+      "country": "Deutschland"
+    },
+    "email": "info@flowconai.com"
+  }
+}
