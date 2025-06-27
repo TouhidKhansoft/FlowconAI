@@ -1,23 +1,74 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { useExternalStoreRuntime } from '@assistant-ui/react';
-import { useCallback, useState, useRef, useMemo } from 'react';
+import { useCallback, useState, useRef, useMemo, useEffect } from 'react';
 import { findBestMatch } from '../lib/qa-patterns';
 
-export const useGeminiRuntime = () => {
+export const useGeminiRuntime = (initialMessage = null) => {
   const [isLoading, setIsLoading] = useState(false);
   const genAIRef = useRef(null);
   const chatRef = useRef(null);
-  const messagesRef = useRef([
-    {
+  const getInitialMessages = () => {
+    const welcomeMessage = {
       id: '1',
       role: 'assistant',
       content: [{ 
         type: 'text', 
         text: 'Welcome to FlowConAI! I\'m here to help you explore how AI can transform your business. What would you like to know?' 
       }]
+    };
+
+    if (initialMessage && initialMessage.trim()) {
+      const userMessage = {
+        id: '2',
+        role: 'user',
+        content: [{ 
+          type: 'text', 
+          text: initialMessage.trim() 
+        }]
+      };
+      return [welcomeMessage, userMessage];
     }
-  ]);
-  const [, forceUpdate] = useState({});
+    
+    return [welcomeMessage];
+  };
+
+  const [messages, setMessages] = useState(getInitialMessages);
+  const messagesRef = useRef(messages);
+  const hasProcessedInitial = useRef(false);
+
+  // Update ref when messages change
+  useEffect(() => {
+    messagesRef.current = messages;
+  }, [messages]);
+
+  // Reset messages when initialMessage changes
+  useEffect(() => {
+    const welcomeMessage = {
+      id: '1',
+      role: 'assistant',
+      content: [{ 
+        type: 'text', 
+        text: 'Welcome to FlowConAI! I\'m here to help you explore how AI can transform your business. What would you like to know?' 
+      }]
+    };
+
+    let newMessages = [welcomeMessage];
+    
+    if (initialMessage && initialMessage.trim()) {
+      const userMessage = {
+        id: '2',
+        role: 'user',
+        content: [{ 
+          type: 'text', 
+          text: initialMessage.trim() 
+        }]
+      };
+      newMessages = [welcomeMessage, userMessage];
+    }
+    
+    setMessages(newMessages);
+    hasProcessedInitial.current = false;
+  }, [initialMessage]);
 
   // Initialize Gemini (only once)
   if (!genAIRef.current && import.meta.env.VITE_GOOGLE_AI_API_KEY) {
@@ -26,9 +77,92 @@ export const useGeminiRuntime = () => {
   }
 
   const updateMessages = useCallback((newMessages) => {
-    messagesRef.current = newMessages;
-    forceUpdate({});
+    setMessages(newMessages);
   }, []);
+
+  // Process initial message if provided
+  const processInitialMessage = useCallback(async () => {
+    if (initialMessage && !hasProcessedInitial.current && genAIRef.current) {
+      hasProcessedInitial.current = true;
+      setIsLoading(true);
+
+      try {
+        // Check Q&A patterns first
+        const patternMatch = findBestMatch(initialMessage);
+        
+        if (patternMatch && patternMatch.confidence > 0.7) {
+          const assistantMessage = {
+            id: (Date.now() + 1).toString(),
+            role: 'assistant',
+            content: [{ type: 'text', text: patternMatch.pattern.response }]
+          };
+          updateMessages([...messagesRef.current, assistantMessage]);
+        } else {
+          // Use Gemini API
+          const model = genAIRef.current.getGenerativeModel({ model: 'gemini-1.5-flash' });
+          
+          if (!chatRef.current) {
+            const systemPrompt = `You are an AI assistant for FlowConAI, an AI consulting company. 
+Be helpful, professional, and concise. Focus on FlowConAI's services:
+- AI Strategy Consulting
+- Machine Learning Solutions  
+- Natural Language Processing
+- Computer Vision
+- Process Automation
+- Data Analytics
+
+Keep responses under 200 words unless asked for more detail.`;
+
+            chatRef.current = model.startChat({
+              history: [
+                {
+                  role: 'user',
+                  parts: [{ text: systemPrompt }]
+                },
+                {
+                  role: 'model',
+                  parts: [{ text: 'Understood. I\'ll help users learn about FlowConAI services.' }]
+                }
+              ],
+              generationConfig: {
+                maxOutputTokens: 500,
+                temperature: 0.7,
+                topP: 0.8,
+              },
+            });
+          }
+
+          const result = await chatRef.current.sendMessage(initialMessage);
+          const response = await result.response;
+          const responseText = response.text();
+          
+          const assistantMessage = {
+            id: (Date.now() + 1).toString(),
+            role: 'assistant',
+            content: [{ type: 'text', text: responseText }]
+          };
+          updateMessages([...messagesRef.current, assistantMessage]);
+        }
+      } catch (error) {
+        const errorMessage = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: [{ type: 'text', text: '❌ Sorry, I encountered an error processing your request. Please try again.' }]
+        };
+        updateMessages([...messagesRef.current, errorMessage]);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  }, [initialMessage, updateMessages]);
+
+  // Process initial message when runtime is ready
+  useEffect(() => {
+    if (initialMessage && genAIRef.current && !hasProcessedInitial.current) {
+      const timer = setTimeout(processInitialMessage, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [initialMessage, processInitialMessage]);
 
   const onNew = useCallback(async (message) => {
     if (!genAIRef.current) {
@@ -146,7 +280,7 @@ Keep responses under 200 words unless asked for more detail.`;
 
   // Use external store runtime
   const runtime = useExternalStoreRuntime({
-    messages: messagesRef.current,
+    messages: messages,
     onNew,
     convertMessage: (msg) => ({
       ...msg,

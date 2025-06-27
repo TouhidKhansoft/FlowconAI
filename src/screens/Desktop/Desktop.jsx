@@ -1,8 +1,33 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Chatbot from "../../components/Chatbot";
 
 export const Desktop = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    const trimmedQuery = searchQuery.trim();
+    if (trimmedQuery) {
+      navigate(`/chat?q=${encodeURIComponent(trimmedQuery)}`);
+    } else {
+      // If no query, just open chat page
+      navigate('/chat');
+    }
+  };
+
+  const handleSearchKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSearch();
+    }
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    handleSearch();
+  };
 
   return (
     <div className="bg-variable-collection-dark min-h-screen w-full overflow-x-hidden relative">
@@ -185,16 +210,25 @@ export const Desktop = () => {
 
             {/* Search Bar */}
             <div className="mt-10 lg:mt-12 max-w-2xl mx-auto">
-              <div className="flex items-center bg-white/10 backdrop-blur-xl rounded-lg border border-white/20 p-1.5">
-                <input
-                  type="text"
-                  placeholder="Ask Flowcon how he can help your business........"
-                  className="flex-1 bg-transparent px-5 py-4 text-white placeholder-gray-400 outline-none text-base focus:border-variable-collection-primary"
-                />
-                <button className="w-14 h-14 rounded-lg bg-gradient-to-r from-[#3B82F6] to-[#07214C] flex items-center justify-center flex-shrink-0 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] hover:scale-110 hover:brightness-125 transition-all duration-300">
-                  <img className="w-7 h-7" alt="Send" src="/img/send-3.png" />
-                </button>
-              </div>
+              <form onSubmit={handleSearchSubmit}>
+                <div className="flex items-center bg-white/10 backdrop-blur-xl rounded-lg border border-white/20 p-1.5">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleSearchKeyPress}
+                    placeholder="Ask Flowcon how he can help your business........"
+                    className="flex-1 bg-transparent px-5 py-4 text-white placeholder-gray-400 outline-none text-base focus:border-variable-collection-primary"
+                    autoComplete="off"
+                  />
+                  <button 
+                    type="submit"
+                    className="w-14 h-14 rounded-lg bg-gradient-to-r from-[#3B82F6] to-[#07214C] flex items-center justify-center flex-shrink-0 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] hover:scale-110 hover:brightness-125 transition-all duration-300"
+                  >
+                    <img className="w-7 h-7" alt="Send" src="/img/send-3.png" />
+                  </button>
+                </div>
+              </form>
             </div>
 
             {/* CTA Button */}

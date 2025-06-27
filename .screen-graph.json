@@ -1,4 +1,13 @@
 {
-  "nodes": [],
+  "nodes": [
+    {
+      "id": "src/screens/Desktop/Desktop.jsx",
+      "label": "Desktop",
+      "routes": [
+        "/"
+      ],
+      "isRoot": true
+    }
+  ],
   "edges": []
 }

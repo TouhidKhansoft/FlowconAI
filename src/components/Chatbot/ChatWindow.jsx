@@ -265,4 +265,6 @@ const ChatWindow = ({ onClose }) => {
   );
 };
 
+// Export individual components for reuse
+export { Thread, Composer };
 export default ChatWindow;
