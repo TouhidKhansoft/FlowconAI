@@ -10,7 +10,7 @@ FlowConAI landing page - a responsive React-based website built with Vite and st
 
 ```bash
 # Development (runs on port 5173)
-yarn dev
+yarn run dev
 
 # Production build (outputs to /dist)
 yarn build

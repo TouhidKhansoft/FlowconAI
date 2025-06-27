@@ -16,8 +16,6 @@
     "@assistant-ui/react": "^0.10.24",
     "@assistant-ui/react-ai-sdk": "^0.10.14",
     "@google/generative-ai": "^0.24.1",
-    "@vercel/analytics": "^1.5.0",
-    "@vercel/edge": "^1.2.2",
     "ai": "^4.3.16",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -39,7 +37,6 @@
     "globals": "15.12.0",
     "storybook": "^8.4.6",
     "tailwindcss": "3.4.16",
-    "vercel": "^44.2.6",
     "vite": "6.0.4"
   }
 }
