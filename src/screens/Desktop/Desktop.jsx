@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Chatbot from "../../components/Chatbot";
 
 export const Desktop = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -791,6 +792,9 @@ export const Desktop = () => {
           </div>
         </footer>
       </main>
+      
+      {/* Chatbot Component */}
+      <Chatbot />
     </div>
   );
 };

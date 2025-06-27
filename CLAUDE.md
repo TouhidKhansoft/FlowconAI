@@ -9,8 +9,8 @@ FlowConAI landing page - a responsive React-based website built with Vite and st
 ## Key Commands
 
 ```bash
-# Development (runs on port 5173, may auto-increment if in use)
-yarn run dev
+# Frontend only development (runs on port 5173)
+yarn dev
 
 # Production build (outputs to /dist)
 yarn build
@@ -18,9 +18,22 @@ yarn build
 # Component development with Storybook
 yarn storybook
 yarn build-storybook
+
+# Deploy to production (where API routes work)
+vercel --prod
 ```
 
 **Important**: This project uses Yarn as the package manager. Use `yarn` instead of `npm` for all commands.
+
+## IMPORTANT: Local API Development
+
+**The API routes (`/api/*`) only work in production on Vercel.** For local development:
+
+1. **Frontend Only**: Run `yarn dev` - the chatbot UI will be visible but won't function
+2. **Deploy to Vercel**: Use `vercel --prod` to deploy and test with working API routes
+3. **Alternative**: Use Vercel's preview deployments for testing
+
+This is because Vercel's Edge Functions require Vercel's runtime environment, which isn't available when running Vite locally.
 
 ## Architecture & Key Files
 
@@ -54,12 +67,20 @@ yarn build-storybook
 8. CTA section with special gradient border
 9. Footer
 
+## AI Chatbot Feature
+
+- **Technology**: Assistant UI + Vercel AI SDK with Google Gemini
+- **API Routes**: Located in `/api/` directory (Edge Functions)
+- **Production Only**: API routes only work when deployed to Vercel
+- **Environment**: Requires `GOOGLE_GENERATIVE_AI_API_KEY` in Vercel dashboard
+- **Components**: Located in `/src/components/Chatbot/`
+
 ## Development Notes
 
 - **Port Conflicts**: Dev server searches for available ports starting from 5173
 - **Static Assets**: Images stored in `/static/img/`
-- **No Git Repo**: Project is not yet initialized with git
 - **State Management**: Simple useState hooks, no complex state library
+- **API Development**: Deploy to Vercel to test API functionality
 
 ## Recent Design Decisions
 
@@ -68,3 +89,8 @@ yarn build-storybook
 - Buttons have blue gradient with enhanced hover effects
 - "AI Age" text is white, not gradient
 - Background uses teal/blue blur orbs matching flowconai-landing project
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

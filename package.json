@@ -7,14 +7,22 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.2.19",
+    "@assistant-ui/react": "^0.10.24",
+    "@assistant-ui/react-ai-sdk": "^0.10.14",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/edge": "^1.2.2",
+    "ai": "^4.3.16",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@animaapp/vite-plugin-screen-graph": "^0.1.5",
@@ -23,10 +31,14 @@
     "@storybook/addon-onboarding": "^8.4.6",
     "@storybook/react-vite": "^8.4.6",
     "@vitejs/plugin-react": "4.3.4",
+    "concurrently": "^9.2.0",
+    "dotenv": "^16.5.0",
     "esbuild": "0.24.0",
+    "express": "^5.1.0",
     "globals": "15.12.0",
     "storybook": "^8.4.6",
     "tailwindcss": "3.4.16",
+    "vercel": "^44.2.6",
     "vite": "6.0.4"
   }
 }

@@ -9,7 +9,7 @@ This document provides a comprehensive specification for implementing an AI-powe
 
 ```bash
 # 1. Install dependencies
-yarn add @assistant-ui/react ai @ai-sdk/google
+yarn add @assistant-ui/react @assistant-ui/react-ai-sdk ai @ai-sdk/google
 yarn add @vercel/analytics @vercel/edge
 
 # 2. Set up environment
@@ -252,7 +252,7 @@ vercel link
 
 ```bash
 # Install required packages
-yarn add ai @ai-sdk/google @assistant-ui/react
+yarn add ai @ai-sdk/google @assistant-ui/react @assistant-ui/react-ai-sdk
 
 # Additional Vercel packages
 yarn add @vercel/analytics @vercel/edge
@@ -272,6 +272,8 @@ yarn add -D @types/node typescript
 
 ### Assistant UI Configuration
 
+**Important Note**: Assistant UI exports primitive components (ThreadPrimitive, ComposerPrimitive), not pre-built components. You must compose these primitives to create your custom chat interface.
+
 1. **Theme Customization** (src/styles/assistant-ui-theme.css)
 
 CSS customization that:
@@ -282,15 +284,22 @@ CSS customization that:
 - Ensures mobile responsiveness with full-screen modal on small devices
 - Uses CSS variables for easy theme maintenance
 
-2. **Assistant UI Provider Setup** (src/index.jsx)
+2. **Component Implementation** (src/components/Chatbot/ChatWindow.jsx)
 
-Provider configuration that:
-- Wraps the app with Assistant UI context
-- Configures welcome message and suggestions
-- Sets dark theme to match FlowConAI branding
-- Customizes component classes for styling
-- Defines placeholder text for the input composer
-- Enables all Assistant UI features globally
+Custom components built from primitives:
+- Thread component using ThreadPrimitive.Root, ThreadPrimitive.Viewport, and ThreadPrimitive.Messages
+- Composer component using ComposerPrimitive.Root, ComposerPrimitive.Input, and ComposerPrimitive.Send
+- Custom message components for user and assistant messages
+- Welcome message with quick action buttons
+
+3. **Runtime Integration** (src/hooks/useVercelAIRuntime.js)
+
+Runtime configuration that:
+- Uses useChatRuntime from @assistant-ui/react-ai-sdk
+- Integrates with Vercel AI SDK for streaming responses
+- Implements pattern matching before API calls
+- Handles errors gracefully
+- Supports conversation context
 
 ### Pre-defined Q&A Strategy
 
@@ -450,12 +459,12 @@ vercel dev
 
 ```bash
 # Install dependencies
-yarn add @assistant-ui/react ai @ai-sdk/google
+yarn add @assistant-ui/react @assistant-ui/react-ai-sdk ai @ai-sdk/google
 yarn add -D @testing-library/react vitest
 
 # Create component structure
 mkdir -p src/components/Chatbot
-touch src/components/Chatbot/{index.jsx,ChatBubble.jsx,styles.module.css}
+touch src/components/Chatbot/{index.jsx,ChatBubble.jsx,styles.css}
 
 # Test implementation
 yarn test src/components/Chatbot
@@ -644,12 +653,64 @@ All Q&A patterns are stored in a dedicated markdown file:
 
 ## Common Issues & Troubleshooting
 
+### Issue: Quota Exceeded Error (429)
+**Problem**: Chat stops working with "Rate limit exceeded" or 500 error even after adding API key
+
+**Symptoms**:
+- Error message in console about quota limits
+- API responds with 429 status code
+- Chat interface shows error message
+
+**Cause**: Google AI free tier allows only 60 requests per minute
+
+**Solutions**:
+1. **Immediate**: Wait 1 minute for rate limit to reset
+2. **Alternative**: Create new Google Cloud project with fresh API key (see `create-new-api-key.md`)
+3. **Long-term**: Upgrade to Google Cloud paid billing for higher limits
+
+**How to check your current usage**:
+```bash
+# Run the test script to check API key status
+node test-api-key.js
+```
+
 ### Issue: "Module not found" errors
 ```bash
 # Solution: Ensure all dependencies are installed
-yarn add @assistant-ui/react ai @ai-sdk/google
+yarn add @assistant-ui/react @assistant-ui/react-ai-sdk ai @ai-sdk/google
 yarn add @vercel/analytics @vercel/edge
 ```
+
+### Issue: "Composer not exported" error
+**Problem**: `Uncaught SyntaxError: The requested module '@assistant-ui/react' does not provide an export named 'Composer'`
+
+**Solution**: Assistant UI exports primitive components, not pre-built ones. Use:
+```javascript
+// ❌ Wrong way
+import { Thread, Composer } from '@assistant-ui/react';
+
+// ✅ Correct way
+import { ThreadPrimitive, ComposerPrimitive } from '@assistant-ui/react';
+```
+
+You need to build your own Thread and Composer components using these primitives. The fixed implementation uses ThreadPrimitive and ComposerPrimitive to create custom components.
+
+### Issue: "process is not defined" error
+**Problem**: `Uncaught ReferenceError: process is not defined`
+
+**Solution**: Vite doesn't expose `process.env` to the browser. Use Vite's environment variable syntax:
+```javascript
+// ❌ Wrong way (Node.js style)
+process.env.GOOGLE_GENERATIVE_AI_API_KEY
+
+// ✅ Correct way (Vite style)
+import.meta.env.VITE_API_URL  // For client-side variables (must start with VITE_)
+```
+
+**Important**: 
+- Client-side env vars MUST be prefixed with `VITE_`
+- Server-side env vars (like API keys) should NOT have the `VITE_` prefix
+- API keys should only be accessed in server-side code (edge functions)
 
 ### Issue: API routes not working locally
 ```bash
