@@ -25,6 +25,54 @@
   ],
   "edges": [
     {
+      "id": "src/screens/Desktop/Desktop.jsx:51:16-to-src/components/BlogList.jsx",
+      "source": "src/screens/Desktop/Desktop.jsx",
+      "target": "src/components/BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                  to=\"/blogs\"\n                  className=\"text-gray-300 hover:text-white transition-colors text-base xl:text-lg font-normal\"\n                >\n                  {t('nav.blogs')}\n                </Link>",
+          "line": 51,
+          "endLine": 56,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Desktop/Desktop.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/Desktop.jsx:112:16-to-src/components/BlogList.jsx",
+      "source": "src/screens/Desktop/Desktop.jsx",
+      "target": "src/components/BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                  to=\"/blogs\"\n                  className=\"text-gray-300 hover:text-white transition-colors text-base py-2\"\n                >\n                  {t('nav.blogs')}\n                </Link>",
+          "line": 112,
+          "endLine": 117,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Desktop/Desktop.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/Desktop.jsx:606:12-to-src/components/BlogList.jsx",
+      "source": "src/screens/Desktop/Desktop.jsx",
+      "target": "src/components/BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n              to=\"/blogs\"\n              className=\"inline-block px-10 py-4 rounded-lg bg-gradient-to-r from-[#3B82F6] to-[#07214C] text-white text-base lg:text-lg font-medium hover:shadow-[0_0_25px_rgba(59,130,246,0.7)] hover:scale-105 hover:brightness-125 transition-all duration-300\"\n            >\n              {t('blog.viewAllBlogs')}\n            </Link>",
+          "line": 606,
+          "endLine": 611,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Desktop/Desktop.jsx"
+        }
+      }
+    },
+    {
       "id": "src/components/BlogList.jsx:23:12-to-src/screens/Desktop/Desktop.jsx",
       "source": "src/components/BlogList.jsx",
       "target": "src/screens/Desktop/Desktop.jsx",
