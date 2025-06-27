@@ -25,57 +25,9 @@
   ],
   "edges": [
     {
-      "id": "src\\screens\\Desktop\\Desktop.jsx:51:16-to-src\\components\\BlogList.jsx",
-      "source": "src\\screens\\Desktop\\Desktop.jsx",
-      "target": "src\\components\\BlogList.jsx",
-      "data": {
-        "viaRoute": "/blogs",
-        "trigger": {
-          "element": "<Link\r\n                  to=\"/blogs\"\r\n                  className=\"text-gray-300 hover:text-white transition-colors text-base xl:text-lg font-normal\"\r\n                >\r\n                  {t('nav.blogs')}\r\n                </Link>",
-          "line": 51,
-          "endLine": 56,
-          "column": 16,
-          "endColumn": 23,
-          "sourceFile": "src\\screens\\Desktop\\Desktop.jsx"
-        }
-      }
-    },
-    {
-      "id": "src\\screens\\Desktop\\Desktop.jsx:112:16-to-src\\components\\BlogList.jsx",
-      "source": "src\\screens\\Desktop\\Desktop.jsx",
-      "target": "src\\components\\BlogList.jsx",
-      "data": {
-        "viaRoute": "/blogs",
-        "trigger": {
-          "element": "<Link\r\n                  to=\"/blogs\"\r\n                  className=\"text-gray-300 hover:text-white transition-colors text-base py-2\"\r\n                >\r\n                  {t('nav.blogs')}\r\n                </Link>",
-          "line": 112,
-          "endLine": 117,
-          "column": 16,
-          "endColumn": 23,
-          "sourceFile": "src\\screens\\Desktop\\Desktop.jsx"
-        }
-      }
-    },
-    {
-      "id": "src\\screens\\Desktop\\Desktop.jsx:599:12-to-src\\components\\BlogList.jsx",
-      "source": "src\\screens\\Desktop\\Desktop.jsx",
-      "target": "src\\components\\BlogList.jsx",
-      "data": {
-        "viaRoute": "/blogs",
-        "trigger": {
-          "element": "<Link\r\n              to=\"/blogs\"\r\n              className=\"inline-block px-10 py-4 rounded-lg bg-gradient-to-r from-[#3B82F6] to-[#07214C] text-white text-base lg:text-lg font-medium hover:shadow-[0_0_25px_rgba(59,130,246,0.7)] hover:scale-105 hover:brightness-125 transition-all duration-300\"\r\n            >\r\n              {t('blog.viewAllBlogs')}\r\n            </Link>",
-          "line": 599,
-          "endLine": 604,
-          "column": 12,
-          "endColumn": 19,
-          "sourceFile": "src\\screens\\Desktop\\Desktop.jsx"
-        }
-      }
-    },
-    {
-      "id": "src\\components\\BlogList.jsx:23:12-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogList.jsx:23:12-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -84,14 +36,14 @@
           "endLine": 29,
           "column": 12,
           "endColumn": 19,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:34:16-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogList.jsx:34:16-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -100,14 +52,14 @@
           "endLine": 39,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:52:16-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogList.jsx:52:16-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -116,14 +68,14 @@
           "endLine": 57,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:95:16-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogList.jsx:95:16-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -132,14 +84,14 @@
           "endLine": 100,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:113:16-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogList.jsx:113:16-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -148,14 +100,14 @@
           "endLine": 118,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:196:12-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogList.jsx:196:12-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -164,14 +116,14 @@
           "endLine": 202,
           "column": 12,
           "endColumn": 19,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:215:14-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogList.jsx:215:14-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -180,14 +132,14 @@
           "endLine": 220,
           "column": 14,
           "endColumn": 21,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogList.jsx:221:14-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogList.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogList.jsx:221:14-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogList.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -196,14 +148,14 @@
           "endLine": 226,
           "column": 14,
           "endColumn": 21,
-          "sourceFile": "src\\components\\BlogList.jsx"
+          "sourceFile": "src/components/BlogList.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:70:10-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogDetail.jsx:70:10-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -212,14 +164,14 @@
           "endLine": 72,
           "column": 10,
           "endColumn": 17,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:90:12-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogDetail.jsx:90:12-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -228,14 +180,14 @@
           "endLine": 96,
           "column": 12,
           "endColumn": 19,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:101:16-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogDetail.jsx:101:16-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -244,14 +196,14 @@
           "endLine": 106,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:119:16-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogDetail.jsx:119:16-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -260,14 +212,14 @@
           "endLine": 124,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:162:16-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogDetail.jsx:162:16-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -276,14 +228,14 @@
           "endLine": 167,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:180:16-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogDetail.jsx:180:16-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -292,14 +244,14 @@
           "endLine": 185,
           "column": 16,
           "endColumn": 23,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:203:10-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogDetail.jsx:203:10-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -308,14 +260,14 @@
           "endLine": 211,
           "column": 10,
           "endColumn": 17,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:298:12-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogDetail.jsx:298:12-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -324,14 +276,14 @@
           "endLine": 304,
           "column": 12,
           "endColumn": 19,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:317:14-to-src\\screens\\Desktop\\Desktop.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "id": "src/components/BlogDetail.jsx:317:14-to-src/screens/Desktop/Desktop.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/screens/Desktop/Desktop.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -340,14 +292,14 @@
           "endLine": 322,
           "column": 14,
           "endColumn": 21,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\BlogDetail.jsx:323:14-to-src\\components\\BlogList.jsx",
-      "source": "src\\components\\BlogDetail.jsx",
-      "target": "src\\components\\BlogList.jsx",
+      "id": "src/components/BlogDetail.jsx:323:14-to-src/components/BlogList.jsx",
+      "source": "src/components/BlogDetail.jsx",
+      "target": "src/components/BlogList.jsx",
       "data": {
         "viaRoute": "/blogs",
         "trigger": {
@@ -356,7 +308,7 @@
           "endLine": 328,
           "column": 14,
           "endColumn": 21,
-          "sourceFile": "src\\components\\BlogDetail.jsx"
+          "sourceFile": "src/components/BlogDetail.jsx"
         }
       }
     }
