@@ -9,7 +9,7 @@ FlowConAI landing page - a responsive React-based website built with Vite and st
 ## Key Commands
 
 ```bash
-# Development (runs on port 5173, may auto-increment if in use)
+# Development (runs on port 5173)
 yarn run dev
 
 # Production build (outputs to /dist)
@@ -21,6 +21,19 @@ yarn build-storybook
 ```
 
 **Important**: This project uses Yarn as the package manager. Use `yarn` instead of `npm` for all commands.
+
+## Chatbot Setup (Client-Side Only)
+
+**This project now uses Google Gemini AI directly in the browser - NO VERCEL NEEDED!**
+
+1. **Get API Key**: Get your Google AI API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. **Set Environment Variable**: Add to `.env.local`:
+   ```
+   VITE_GOOGLE_AI_API_KEY=your_api_key_here
+   ```
+3. **Run Locally**: `yarn dev` - The chatbot works immediately!
+
+⚠️ **Security Warning**: The API key is exposed to the browser. This setup is for demos/personal projects only. For production, use server-side API routes.
 
 ## Architecture & Key Files
 
@@ -54,12 +67,21 @@ yarn build-storybook
 8. CTA section with special gradient border
 9. Footer
 
+## AI Chatbot Feature
+
+- **Technology**: Assistant UI + Google Generative AI SDK (Gemini)
+- **Architecture**: Client-side only - no API routes needed!
+- **Q&A Patterns**: Predefined responses in `/src/lib/qa-patterns.js`
+- **Runtime**: Custom Gemini integration in `/src/hooks/useGeminiRuntime.js`
+- **Components**: Located in `/src/components/Chatbot/`
+- **Environment**: Requires `VITE_GOOGLE_AI_API_KEY` in `.env.local`
+
 ## Development Notes
 
 - **Port Conflicts**: Dev server searches for available ports starting from 5173
 - **Static Assets**: Images stored in `/static/img/`
-- **No Git Repo**: Project is not yet initialized with git
 - **State Management**: Simple useState hooks, no complex state library
+- **Chatbot**: Works immediately in local development with `yarn dev`
 
 ## Recent Design Decisions
 
@@ -68,3 +90,8 @@ yarn build-storybook
 - Buttons have blue gradient with enhanced hover effects
 - "AI Age" text is white, not gradient
 - Background uses teal/blue blur orbs matching flowconai-landing project
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

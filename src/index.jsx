@@ -5,6 +5,7 @@ import { Desktop } from "./screens/Desktop";
 import { BlogList } from "./components/BlogList";
 import { BlogDetail } from "./components/BlogDetail";
 import './i18n';
+import { ChatPage } from "./screens/ChatPage";
 
 createRoot(document.getElementById("app")).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById("app")).render(
         <Route path="/" element={<Desktop />} />
         <Route path="/blogs" element={<BlogList />} />
         <Route path="/blogs/:blogId" element={<BlogDetail />} />
+        <Route path="/chat" element={<ChatPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
