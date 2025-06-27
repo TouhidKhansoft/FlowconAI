@@ -133,9 +133,16 @@ export const Desktop = () => {
         <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal text-white leading-tight">
-              {t('hero.title')}
-              <br className="hidden sm:block" />
-              <span className="text-white">{t('hero.titleHighlight')}</span>
+              {/* Mobile version - shorter text */}
+              <span className="block sm:hidden">
+                {t('hero.title')}
+              </span>
+              {/* Desktop version - full text */}
+              <span className="hidden sm:block">
+                {t('hero.title')}
+                <br />
+                <span className="text-white">{t('hero.titleHighlight')}</span>
+              </span>
             </h1>
             <p className="mt-6 lg:mt-8 text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto">
               {t('hero.subtitle')}
@@ -205,7 +212,7 @@ export const Desktop = () => {
           {/* Service Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {/* AI Strategy Consulting */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-[#3B82F6] to-[#07214C] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <img
                   className="w-6 h-6"
@@ -216,13 +223,13 @@ export const Desktop = () => {
               <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
                 {t('expertise.services.aiStrategy.title')}
               </h3>
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed flex-grow">
                 {t('expertise.services.aiStrategy.description')}
               </p>
             </div>
 
             {/* Employee Trainings */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-[#3B82F6] to-[#07214C] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <img
                   className="w-6 h-6"
@@ -233,13 +240,13 @@ export const Desktop = () => {
               <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
                 {t('expertise.services.employeeTraining.title')}
               </h3>
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed flex-grow">
                 {t('expertise.services.employeeTraining.description')}
               </p>
             </div>
 
             {/* Custom AI Agents */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group h-full flex flex-col hidden md:block md:flex">
               <div className="w-12 h-12 bg-gradient-to-r from-[#3B82F6] to-[#07214C] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <img
                   className="w-6 h-6"
@@ -250,13 +257,13 @@ export const Desktop = () => {
               <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
                 {t('expertise.services.customAgents.title')}
               </h3>
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed flex-grow">
                 {t('expertise.services.customAgents.description')}
               </p>
             </div>
 
             {/* Workflow Automation */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group h-full flex flex-col">
               <div className="w-12 h-12 bg-gradient-to-r from-[#3B82F6] to-[#07214C] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <img
                   className="w-6 h-6"
@@ -267,13 +274,13 @@ export const Desktop = () => {
               <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
                 {t('expertise.services.workflowAutomation.title')}
               </h3>
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed flex-grow">
                 {t('expertise.services.workflowAutomation.description')}
               </p>
             </div>
 
             {/* Process Optimization */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group h-full flex flex-col hidden md:block md:flex">
               <div className="w-12 h-12 bg-gradient-to-r from-[#3B82F6] to-[#07214C] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <img
                   className="w-6 h-6"
@@ -284,13 +291,13 @@ export const Desktop = () => {
               <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
                 {t('expertise.services.processOptimization.title')}
               </h3>
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed flex-grow">
                 {t('expertise.services.processOptimization.description')}
               </p>
             </div>
 
             {/* GDPR Compliant */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group">
+            <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 hover:bg-white/10 transition-all duration-300 group h-full flex flex-col hidden md:block md:flex">
               <div className="w-12 h-12 bg-gradient-to-r from-[#3B82F6] to-[#07214C] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <img
                   className="w-6 h-6"
@@ -301,7 +308,7 @@ export const Desktop = () => {
               <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
                 {t('expertise.services.gdprCompliant.title')}
               </h3>
-              <p className="text-base lg:text-lg text-gray-400 leading-relaxed">
+              <p className="text-base lg:text-lg text-gray-400 leading-relaxed flex-grow">
                 {t('expertise.services.gdprCompliant.description')}
               </p>
             </div>
@@ -314,7 +321,7 @@ export const Desktop = () => {
           className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24"
         >
           {/* Automation & Workflows Card */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 mb-10 relative overflow-hidden">
+          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 mb-10 relative overflow-hidden hidden md:block">
             <div className="absolute inset-0 opacity-30">
               <div className="absolute w-64 h-64 -top-32 right-0 bg-variable-collection-primary rounded-full blur-[150px]" />
               <div className="absolute w-96 h-96 bottom-0 left-1/2 -translate-x-1/2 bg-blue-600 rounded-full blur-[200px]" />
