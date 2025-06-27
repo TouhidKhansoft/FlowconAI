@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitcher } from "../../components/LanguageSwitcher";
 import { useNavigate } from "react-router-dom";
-import Chatbot from "../../components/Chatbot";
-.
+
 export const Desktop = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const handleSearch = () => {
@@ -781,9 +779,6 @@ export const Desktop = () => {
           </div>
         </footer>
       </main>
-      
-      {/* Chatbot Component */}
-      <Chatbot />
     </div>
   );
 };
