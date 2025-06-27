@@ -1,6 +1,9 @@
 import React from 'react';
 
 const MessageContent = ({ message, role }) => {
+  // Debug: log what we're receiving
+  console.log(`MessageContent received:`, { message, role });
+  
   // Handle undefined or null message
   if (!message) {
     console.warn(`${role} message is undefined or null`);

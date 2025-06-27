@@ -9,7 +9,7 @@ FlowConAI landing page - a responsive React-based website built with Vite and st
 ## Key Commands
 
 ```bash
-# Frontend only development (runs on port 5173)
+# Development (runs on port 5173)
 yarn dev
 
 # Production build (outputs to /dist)
@@ -18,22 +18,22 @@ yarn build
 # Component development with Storybook
 yarn storybook
 yarn build-storybook
-
-# Deploy to production (where API routes work)
-vercel --prod
 ```
 
 **Important**: This project uses Yarn as the package manager. Use `yarn` instead of `npm` for all commands.
 
-## IMPORTANT: Local API Development
+## Chatbot Setup (Client-Side Only)
 
-**The API routes (`/api/*`) only work in production on Vercel.** For local development:
+**This project now uses Google Gemini AI directly in the browser - NO VERCEL NEEDED!**
 
-1. **Frontend Only**: Run `yarn dev` - the chatbot UI will be visible but won't function
-2. **Deploy to Vercel**: Use `vercel --prod` to deploy and test with working API routes
-3. **Alternative**: Use Vercel's preview deployments for testing
+1. **Get API Key**: Get your Google AI API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. **Set Environment Variable**: Add to `.env.local`:
+   ```
+   VITE_GOOGLE_AI_API_KEY=your_api_key_here
+   ```
+3. **Run Locally**: `yarn dev` - The chatbot works immediately!
 
-This is because Vercel's Edge Functions require Vercel's runtime environment, which isn't available when running Vite locally.
+⚠️ **Security Warning**: The API key is exposed to the browser. This setup is for demos/personal projects only. For production, use server-side API routes.
 
 ## Architecture & Key Files
 
@@ -69,18 +69,19 @@ This is because Vercel's Edge Functions require Vercel's runtime environment, wh
 
 ## AI Chatbot Feature
 
-- **Technology**: Assistant UI + Vercel AI SDK with Google Gemini
-- **API Routes**: Located in `/api/` directory (Edge Functions)
-- **Production Only**: API routes only work when deployed to Vercel
-- **Environment**: Requires `GOOGLE_GENERATIVE_AI_API_KEY` in Vercel dashboard
+- **Technology**: Assistant UI + Google Generative AI SDK (Gemini)
+- **Architecture**: Client-side only - no API routes needed!
+- **Q&A Patterns**: Predefined responses in `/src/lib/qa-patterns.js`
+- **Runtime**: Custom Gemini integration in `/src/hooks/useGeminiRuntime.js`
 - **Components**: Located in `/src/components/Chatbot/`
+- **Environment**: Requires `VITE_GOOGLE_AI_API_KEY` in `.env.local`
 
 ## Development Notes
 
 - **Port Conflicts**: Dev server searches for available ports starting from 5173
 - **Static Assets**: Images stored in `/static/img/`
 - **State Management**: Simple useState hooks, no complex state library
-- **API Development**: Deploy to Vercel to test API functionality
+- **Chatbot**: Works immediately in local development with `yarn dev`
 
 ## Recent Design Decisions
 

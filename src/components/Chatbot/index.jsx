@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AssistantRuntimeProvider } from '@assistant-ui/react';
-import { useVercelAIRuntime } from '../../hooks/useVercelAIRuntime';
+import { useGeminiRuntime } from '../../hooks/useGeminiRuntime';
 import ChatBubble from './ChatBubble';
 import ChatWindow from './ChatWindow';
 import './styles.css';
@@ -9,14 +9,7 @@ const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   
-  const runtime = useVercelAIRuntime({
-    api: '/api/chat',
-    onNewMessage: () => {
-      if (!isOpen) {
-        setUnreadCount(prev => prev + 1);
-      }
-    }
-  });
+  const { runtime, isLoading } = useGeminiRuntime();
 
   const handleOpen = () => {
     setIsOpen(true);

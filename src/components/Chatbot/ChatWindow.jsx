@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
-import { ThreadPrimitive, ComposerPrimitive } from '@assistant-ui/react';
-import MessageContent from './MessageContent';
+import { ThreadPrimitive, ComposerPrimitive, MessagePrimitive } from '@assistant-ui/react';
 
 const QuickActions = ({ onSendMessage }) => {
   const handleQuickAction = (query) => {
@@ -83,16 +82,34 @@ const Thread = ({ onSendMessage }) => {
         
         <ThreadPrimitive.Messages
           components={{
-            UserMessage: ({ message }) => (
-              <div className="aui-message aui-message-user">
-                <MessageContent message={message} role="user" />
-              </div>
-            ),
-            AssistantMessage: ({ message }) => (
-              <div className="aui-message aui-message-assistant">
-                <MessageContent message={message} role="assistant" />
-              </div>
-            ),
+            Message: (props) => {
+              const { message } = props;
+              console.log('Message component props:', props);
+              
+              // Extract text content
+              let text = '';
+              if (message?.content) {
+                if (typeof message.content === 'string') {
+                  text = message.content;
+                } else if (Array.isArray(message.content)) {
+                  text = message.content
+                    .map(part => part?.text || '')
+                    .join(' ');
+                }
+              }
+              
+              const isUser = message?.role === 'user';
+              
+              return (
+                <div className={`aui-message ${isUser ? 'aui-message-user' : 'aui-message-assistant'}`}>
+                  <MessagePrimitive.Root>
+                    <MessagePrimitive.Content>
+                      {text || 'Loading...'}
+                    </MessagePrimitive.Content>
+                  </MessagePrimitive.Root>
+                </div>
+              );
+            }
           }}
         />
       </ThreadPrimitive.Viewport>
