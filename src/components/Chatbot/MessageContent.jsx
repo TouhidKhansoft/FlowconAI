@@ -1,17 +1,12 @@
 import React from 'react';
 
 const MessageContent = ({ message, role }) => {
-  // Debug: log what we're receiving
-  console.log(`MessageContent received:`, { message, role });
   
   // Handle undefined or null message
   if (!message) {
-    console.warn(`${role} message is undefined or null`);
     return role === 'assistant' ? <span className="aui-loading">Thinking...</span> : null;
   }
   
-  // Debug logging only for actual messages
-  console.log(`${role} message structure:`, message);
   
   // Extract text from various possible message structures
   let text = '';

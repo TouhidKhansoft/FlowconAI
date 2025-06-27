@@ -21,10 +21,8 @@ export const useGeminiRuntime = () => {
 
   // Initialize Gemini (only once)
   if (!genAIRef.current && import.meta.env.VITE_GOOGLE_AI_API_KEY) {
-    console.log('🔑 Initializing Gemini with API key:', import.meta.env.VITE_GOOGLE_AI_API_KEY.substring(0, 10) + '...');
     genAIRef.current = new GoogleGenerativeAI(import.meta.env.VITE_GOOGLE_AI_API_KEY);
   } else if (!import.meta.env.VITE_GOOGLE_AI_API_KEY) {
-    console.warn('⚠️ No API key found! Make sure VITE_GOOGLE_AI_API_KEY is set in .env.local');
   }
 
   const updateMessages = useCallback((newMessages) => {
@@ -63,11 +61,9 @@ export const useGeminiRuntime = () => {
         : message.content[0]?.text || '';
 
       // First check Q&A patterns for quick responses
-      console.log('🔍 Checking Q&A patterns for:', userText);
       const patternMatch = findBestMatch(userText);
       
       if (patternMatch && patternMatch.confidence > 0.7) {
-        console.log('✅ Found Q&A match:', patternMatch.pattern.id, 'with confidence:', patternMatch.confidence);
         const assistantMessage = {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
@@ -76,8 +72,6 @@ export const useGeminiRuntime = () => {
         updateMessages([...messagesRef.current, assistantMessage]);
         setIsLoading(false);
         return;
-      } else {
-        console.log('❌ No Q&A pattern match, using Gemini...');
       }
 
       // If no pattern match, use Gemini
@@ -119,7 +113,6 @@ Keep responses under 200 words unless asked for more detail.`;
       const response = await result.response;
       const responseText = response.text();
       
-      console.log('🤖 Gemini response:', responseText);
       
       const assistantMessage = {
         id: (Date.now() + 1).toString(),
@@ -129,7 +122,6 @@ Keep responses under 200 words unless asked for more detail.`;
       updateMessages([...messagesRef.current, assistantMessage]);
 
     } catch (error) {
-      console.error('Gemini error:', error);
       
       let errorMessage = '❌ Sorry, I encountered an error. ';
       
