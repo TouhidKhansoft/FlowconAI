@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "service": "Services",
+    "about": "About Us",
+    "features": "Features",
+    "blogs": "Blogs",
+    "home": "Home",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "title": "Consulting and custom development",
+    "titleHighlight": "for the AI Age",
+    "subtitle": "FlowConAI is a German-based AI consulting firm offering GDPR-compliant solutions and on-premise deployment for full data control.",
+    "tags": {
+      "gdpr": "GDPR Compliant",
+      "onPremise": "On-Premise Solutions",
+      "dataSovereignty": "Data Sovereignty"
+    },
+    "searchPlaceholder": "Ask Flowcon how he can help your business........",
+    "cta": "Contact Us"
+  },
+  "expertise": {
+    "title": "Our Expertise",
+    "subtitle": "We combine cutting-edge AI capabilities with the highest standards of data privacy and infrastructure flexibility.",
+    "services": {
+      "aiStrategy": {
+        "title": "AI Strategy Consulting",
+        "description": "Analyze your business processes, bottlenecks and new opportunities to develop a custom AI Strategy for your business"
+      },
+      "employeeTraining": {
+        "title": "Employee Trainings",
+        "description": "Get everyone in your organization ready for the AI age. Learn to integrate external intelligence at the most impactful places in your workflows"
+      },
+      "customAgents": {
+        "title": "Custom AI Agents and LLM applications",
+        "description": "Applications that integrate fully with your organizations tools. Integrate with anything and let AI Agents automate inter tool workflows."
+      },
+      "workflowAutomation": {
+        "title": "Workflow Automation",
+        "description": "Streamline operations with intelligent automation that adapts to your business needs and improves efficiency."
+      },
+      "processOptimization": {
+        "title": "Process Optimization with AI",
+        "description": "Leveraging AI and machine learning to analyze workflows, optimize performance, and drive operational efficiency."
+      },
+      "gdprCompliant": {
+        "title": "GDPR Compliant",
+        "description": "All our AI solutions are designed with European data protection regulations, ensuring your business remains compliant."
+      }
+    }
+  },
+  "features": {
+    "automationWorkflows": {
+      "badge": "Work smarter, not harder",
+      "title": "Automation & Intelligent Workflows",
+      "description": "FlowConAI builds smart workflows using AI agents to automate repetitive tasks, streamline processes, and reduce operational overhead. Streamline your business operations with smart, end-to-end automation. Our AI Automation & Intelligent Workflows service helps you identify repetitive processes and redesign them using AI-powered solutions, saving time and reducing human error."
+    },
+    "dataInsights": {
+      "title": "Data-Driven Insights & AI Analytics",
+      "subtitle": "Turn data into decisions.",
+      "description": "We help you extract insights using advanced analytics and machine learning models, giving your team the power to act with precision."
+    },
+    "aiStrategy": {
+      "title": "AI Strategy & Roadmap",
+      "subtitle": "Transform your business with AI.",
+      "description": "We help you define a clear AI vision, align it with business goals, and create a tailored roadmap to adopt AI across operations."
+    }
+  },
+  "about": {
+    "sectionTitle": "About Us",
+    "companyName": "FlowConAI",
+    "tagline": "Empowering businesses through automation and intelligent agents for an AI-driven future.",
+    "description": "We are a small, decentralized, multinational team that is very passionate about IT and AI. Bringing a deep background in professional Software Development, Project Management and Customer Experience, with a combined experience of 80+ years and dozens of projects"
+  },
+  "blog": {
+    "sectionTitle": "Latest Blogs & News",
+    "sectionSubtitle": "Welcome to the blog of our AI Consulting Agents — your go-to source for the latest in artificial intelligence, automation, and digital transformation.",
+    "viewAllBlogs": "View All Blogs",
+    "backToBlogs": "Back to all blogs",
+    "moreArticles": "More Articles",
+    "categories": {
+      "aiUseCases": "AI Use Cases in Business",
+      "automationTrends": "Automation Trends",
+      "behindTheBuild": "Behind the Build"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to common questions about FlowConAI and its features.",
+    "questions": {
+      "q1": {
+        "question": "1. What is AI consulting, and how can it help my business?",
+        "answer": "AI consulting involves helping organizations identify, design, and implement AI-driven solutions to improve operations, increase efficiency, and unlock new opportunities. Whether you want to automate workflows, integrate AI agents, or enhance customer experience, we guide you at every step."
+      },
+      "q2": {
+        "question": "2. What types of AI solutions do you offer?",
+        "answer": "We offer a wide range of tools, consisting of internal tools, custom development, To production ready external services. A deep insight into current AI capabilities and tooling allows us to find or develop the right tool for any business requirement."
+      },
+      "q3": {
+        "question": "3. Is AI consulting only for large companies?",
+        "answer": "Any company or individual can currently benefit a lot from more knowledge or concrete tools and workflows that utilize modern AI solutions. There is a huge shift happening in the workplace. A lot of skills are becoming redundant while others are becoming very important. Most individuals can already multiply their productivity or step into roles that previously required years of training. This goes double for entire organisations"
+      },
+      "q4": {
+        "question": "4. How do you approach new projects?",
+        "answer": "We can connect and integrate AI with any software now that has an API. This is possible via the Model Context Protocol (MCP). MCP is ushering in a new Age of AI connectivity and utility. For instance by integrating with your documents storage, project management tools and relevant data sources, agentic AI applications are able to save hours of work for each person on a daily basis."
+      },
+      "q5": {
+        "question": "5. Do I need technical expertise to work with you?",
+        "answer": "This depends on the applications of course. Generally there are a lot of quick wins available that can be integrated within a few days or less. However employees still need to be trained on how to use these tools effectively and guided on when to use them.\n\nCustom solution that require us to develop something need to be estimated after reviewing the requirements thoroughly."
+      },
+      "q6": {
+        "question": "6. Can you integrate AI with our existing systems?",
+        "answer": "Data Privacy and Security is one of our main concerns. We are aware that many Businesses do not want to share their sensitive documents with big AI companies like OpenAI and are not allowed to share any GDPR regulated data with companies that operate in the US and are not complying with these regulations.\n\nAs such we offer a full range of options from on premise deployments of open source models to GDPR and EU AI law compliant solutions like offered by Mistral, to direct use US / Chinese AI solutions, as requested by our clients and required by law."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Business for the AI Age?",
+    "subtitle": "Get in touch with our team of AI consultants to discuss how we can help you implement privacy-focused, efficient AI solutions tailored to your specific needs.",
+    "button": "Schedule a Consultation"
+  },
+  "footer": {
+    "companyDescription": "Transforming businesses for the AI age with automation, agents, and strategic integration.",
+    "copyright": "FlowConAI 2025. All rights reserved",
+    "company": "Company",
+    "imprint": "Imprint",
+    "features": "Features",
+    "contactTitle": "Contact US",
+    "address": {
+      "street": "Aachener Str. 392,",
+      "postalCode": "50933 Cologne,",
+      "country": "Germany"
+    },
+    "email": "info@flowconai.com"
+  }
+}

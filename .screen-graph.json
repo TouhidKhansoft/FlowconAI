@@ -1,4 +1,348 @@
 {
-  "nodes": [],
-  "edges": []
+  "nodes": [
+    {
+      "id": "src/screens/Desktop/Desktop.jsx",
+      "label": "Desktop",
+      "routes": [
+        "/"
+      ],
+      "isRoot": true
+    },
+    {
+      "id": "src/components/BlogList.jsx",
+      "label": "BlogList",
+      "routes": [
+        "/blogs"
+      ]
+    },
+    {
+      "id": "src/components/BlogDetail.jsx",
+      "label": "BlogDetail",
+      "routes": [
+        "/blogs/:blogId"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "src\\screens\\Desktop\\Desktop.jsx:48:16-to-src\\components\\BlogList.jsx",
+      "source": "src\\screens\\Desktop\\Desktop.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\r\n                  to=\"/blogs\"\r\n                  className=\"text-gray-300 hover:text-white transition-colors text-base xl:text-lg font-normal\"\r\n                >\r\n                  Blogs\r\n                </Link>",
+          "line": 48,
+          "endLine": 53,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\screens\\Desktop\\Desktop.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Desktop\\Desktop.jsx:119:16-to-src\\components\\BlogList.jsx",
+      "source": "src\\screens\\Desktop\\Desktop.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\r\n                  to=\"/blogs\"\r\n                  className=\"text-gray-300 hover:text-white transition-colors text-base py-2\"\r\n                >\r\n                  Blogs\r\n                </Link>",
+          "line": 119,
+          "endLine": 124,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\screens\\Desktop\\Desktop.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:20:12-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"flex-shrink-0\">\n              <img\n                className=\"h-8 lg:h-9 w-auto\"\n                alt=\"Flowcon logo\"\n                src=\"/img/flowcon-logo-3.png\"\n              />\n            </Link>",
+          "line": 20,
+          "endLine": 26,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:31:16-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                  to=\"/\"\n                  className=\"text-gray-300 hover:text-white transition-colors text-base xl:text-lg font-normal\"\n                >\n                  Home\n                </Link>",
+          "line": 31,
+          "endLine": 36,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:49:16-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                  to=\"/blogs\"\n                  className=\"text-white transition-colors text-base xl:text-lg font-normal\"\n                >\n                  Blogs\n                </Link>",
+          "line": 49,
+          "endLine": 54,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:102:16-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                  to=\"/\"\n                  className=\"text-gray-300 hover:text-white transition-colors text-base py-2\"\n                >\n                  Home\n                </Link>",
+          "line": 102,
+          "endLine": 107,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:120:16-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                  to=\"/blogs\"\n                  className=\"text-white transition-colors text-base py-2\"\n                >\n                  Blogs\n                </Link>",
+          "line": 120,
+          "endLine": 125,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:212:12-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n              <img\n                className=\"h-8 lg:h-9 w-auto mb-6\"\n                alt=\"Flowcon logo\"\n                src=\"/img/flowcon-logo-3.png\"\n              />\n            </Link>",
+          "line": 212,
+          "endLine": 218,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:232:14-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                to=\"/\"\n                className=\"block text-base text-gray-400 hover:text-variable-collection-primary transition-colors\"\n              >\n                Home\n              </Link>",
+          "line": 232,
+          "endLine": 237,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogList.jsx:238:14-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogList.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                to=\"/blogs\"\n                className=\"block text-base text-gray-400 hover:text-variable-collection-primary transition-colors\"\n              >\n                Blogs\n              </Link>",
+          "line": 238,
+          "endLine": 243,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src\\components\\BlogList.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:66:10-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link to=\"/blogs\" className=\"text-variable-collection-primary hover:text-blue-400 underline\">\n            Back to all blogs\n          </Link>",
+          "line": 66,
+          "endLine": 68,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:86:12-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"flex-shrink-0\">\n              <img\n                className=\"h-8 lg:h-9 w-auto\"\n                alt=\"Flowcon logo\"\n                src=\"/img/flowcon-logo-3.png\"\n              />\n            </Link>",
+          "line": 86,
+          "endLine": 92,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:97:16-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                  to=\"/\"\n                  className=\"text-gray-300 hover:text-white transition-colors text-base xl:text-lg font-normal\"\n                >\n                  Home\n                </Link>",
+          "line": 97,
+          "endLine": 102,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:115:16-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                  to=\"/blogs\"\n                  className=\"text-white transition-colors text-base xl:text-lg font-normal\"\n                >\n                  Blogs\n                </Link>",
+          "line": 115,
+          "endLine": 120,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:168:16-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                  to=\"/\"\n                  className=\"text-gray-300 hover:text-white transition-colors text-base py-2\"\n                >\n                  Home\n                </Link>",
+          "line": 168,
+          "endLine": 173,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:186:16-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                  to=\"/blogs\"\n                  className=\"text-white transition-colors text-base py-2\"\n                >\n                  Blogs\n                </Link>",
+          "line": 186,
+          "endLine": 191,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:216:10-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n            to=\"/blogs\"\n            className=\"inline-flex items-center text-variable-collection-primary hover:text-blue-400 transition-colors mb-8\"\n          >\n            <svg className=\"w-5 h-5 mr-2\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M15 19l-7-7 7-7\" />\n            </svg>\n            Back to all blogs\n          </Link>",
+          "line": 216,
+          "endLine": 224,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:311:12-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\">\n              <img\n                className=\"h-8 lg:h-9 w-auto mb-6\"\n                alt=\"Flowcon logo\"\n                src=\"/img/flowcon-logo-3.png\"\n              />\n            </Link>",
+          "line": 311,
+          "endLine": 317,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:331:14-to-src\\screens\\Desktop\\Desktop.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\screens\\Desktop\\Desktop.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                to=\"/\"\n                className=\"block text-base text-gray-400 hover:text-variable-collection-primary transition-colors\"\n              >\n                Home\n              </Link>",
+          "line": 331,
+          "endLine": 336,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\BlogDetail.jsx:337:14-to-src\\components\\BlogList.jsx",
+      "source": "src\\components\\BlogDetail.jsx",
+      "target": "src\\components\\BlogList.jsx",
+      "data": {
+        "viaRoute": "/blogs",
+        "trigger": {
+          "element": "<Link\n                to=\"/blogs\"\n                className=\"block text-base text-gray-400 hover:text-variable-collection-primary transition-colors\"\n              >\n                Blogs\n              </Link>",
+          "line": 337,
+          "endLine": 342,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src\\components\\BlogDetail.jsx"
+        }
+      }
+    }
+  ]
 }
