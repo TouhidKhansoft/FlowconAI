@@ -156,7 +156,12 @@ Keep responses under 200 words unless asked for more detail.`;
   const runtime = useExternalStoreRuntime({
     messages: messagesRef.current,
     onNew,
-    convertMessage: (msg) => msg,
+    convertMessage: (msg) => ({
+      ...msg,
+      id: msg.id || Date.now().toString(),
+      role: msg.role || 'assistant',
+      content: msg.content || []
+    }),
     isRunning: isLoading,
   });
 

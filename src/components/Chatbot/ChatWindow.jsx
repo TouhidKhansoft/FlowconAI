@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { ThreadPrimitive, ComposerPrimitive, MessagePrimitive } from '@assistant-ui/react';
+import React, { useRef, useEffect } from 'react';
+import { ThreadPrimitive, ComposerPrimitive, MessagePrimitive, useMessage } from '@assistant-ui/react';
 
 const QuickActions = ({ onSendMessage }) => {
   const handleQuickAction = (query) => {
@@ -39,6 +39,77 @@ const QuickActions = ({ onSendMessage }) => {
   );
 };
 
+// Custom viewport with auto-scroll
+const AutoScrollViewport = ({ children }) => {
+  const scrollContainerRef = useRef(null);
+  const isAtBottomRef = useRef(true);
+  
+  // Track if user is at bottom of scroll
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
+      // Consider "at bottom" if within 50px of bottom
+      isAtBottomRef.current = scrollHeight - scrollTop - clientHeight < 50;
+    }
+  };
+  
+  // Auto-scroll to bottom when new messages arrive
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const scrollToBottom = () => {
+        if (scrollContainerRef.current && isAtBottomRef.current) {
+          scrollContainerRef.current.scrollTop = scrollContainerRef.current.scrollHeight;
+        }
+      };
+      
+      // Use MutationObserver to detect when messages are added
+      const observer = new MutationObserver((mutations) => {
+        const hasNewMessages = mutations.some(mutation => 
+          mutation.addedNodes.length > 0 && 
+          Array.from(mutation.addedNodes).some(node => 
+            node.classList && (node.classList.contains('aui-message') || 
+            node.querySelector && node.querySelector('.aui-message'))
+          )
+        );
+        
+        if (hasNewMessages) {
+          setTimeout(scrollToBottom, 100);
+        }
+      });
+      
+      observer.observe(scrollContainerRef.current, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Initial scroll
+      setTimeout(scrollToBottom, 100);
+      
+      return () => observer.disconnect();
+    }
+  }, []);
+  
+  return (
+    <div 
+      ref={scrollContainerRef} 
+      className="thread-viewport-wrapper"
+      onScroll={handleScroll}
+      style={{
+        height: '100%',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        position: 'relative'
+      }}
+    >
+      <ThreadPrimitive.Viewport asChild>
+        <div style={{ minHeight: '100%' }}>
+          {children}
+        </div>
+      </ThreadPrimitive.Viewport>
+    </div>
+  );
+};
+
 const Thread = ({ onSendMessage }) => {
   const [error, setError] = React.useState(null);
   
@@ -57,8 +128,8 @@ const Thread = ({ onSendMessage }) => {
   }, []);
   
   return (
-    <ThreadPrimitive.Root>
-      <ThreadPrimitive.Viewport className="thread-viewport">
+    <ThreadPrimitive.Root className="aui-thread-root" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <AutoScrollViewport>
         <ThreadPrimitive.Empty>
           <div className="welcome-message">
             <h4>Welcome to FlowConAI! 👋</h4>
@@ -82,37 +153,49 @@ const Thread = ({ onSendMessage }) => {
         
         <ThreadPrimitive.Messages
           components={{
-            Message: (props) => {
-              const { message } = props;
-              console.log('Message component props:', props);
-              
-              // Extract text content
-              let text = '';
-              if (message?.content) {
-                if (typeof message.content === 'string') {
-                  text = message.content;
-                } else if (Array.isArray(message.content)) {
-                  text = message.content
-                    .map(part => part?.text || '')
-                    .join(' ');
-                }
-              }
-              
-              const isUser = message?.role === 'user';
-              
-              return (
-                <div className={`aui-message ${isUser ? 'aui-message-user' : 'aui-message-assistant'}`}>
-                  <MessagePrimitive.Root>
-                    <MessagePrimitive.Content>
-                      {text || 'Loading...'}
-                    </MessagePrimitive.Content>
-                  </MessagePrimitive.Root>
+            UserMessage: () => (
+              <MessagePrimitive.Root>
+                <div className="aui-message-wrapper">
+                  <div 
+                    className="aui-message-container message-container-user"
+                    style={{ 
+                      justifyContent: 'flex-end',
+                      display: 'flex',
+                      width: '100%',
+                      maxWidth: '600px',
+                      padding: '0 16px'
+                    }}
+                  >
+                    <div className="aui-message aui-message-user">
+                      <MessagePrimitive.Content />
+                    </div>
+                  </div>
                 </div>
-              );
-            }
+              </MessagePrimitive.Root>
+            ),
+            AssistantMessage: () => (
+              <MessagePrimitive.Root>
+                <div className="aui-message-wrapper">
+                  <div 
+                    className="aui-message-container message-container-assistant"
+                    style={{ 
+                      justifyContent: 'flex-start',
+                      display: 'flex',
+                      width: '100%',
+                      maxWidth: '600px',
+                      padding: '0 16px'
+                    }}
+                  >
+                    <div className="aui-message aui-message-assistant">
+                      <MessagePrimitive.Content />
+                    </div>
+                  </div>
+                </div>
+              </MessagePrimitive.Root>
+            )
           }}
         />
-      </ThreadPrimitive.Viewport>
+      </AutoScrollViewport>
     </ThreadPrimitive.Root>
   );
 };
@@ -170,7 +253,9 @@ const ChatWindow = ({ onClose }) => {
       </div>
       
       <div className="chat-body">
-        <Thread onSendMessage={handleSendMessage} />
+        <div style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+          <Thread onSendMessage={handleSendMessage} />
+        </div>
       </div>
       
       <div className="chat-footer">
